@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahyog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ✅ External CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Sahyog</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/products/">Products</a>
+        <a href="/cart/">Cart</a>
+        {% if user.is_authenticated %}
+            <span class="user">Hi, {{ user.username }}</span>
+            <a href="/logout/">Logout</a>
+        {% else %}
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+        {% endif %}
+    </div>
+</div>
+
+<!--  MESSAGE POP-UP  -->
+{% if messages %}
+    <div class="toast-container">
+        {% for message in messages %}
+            <div class="toast">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- PAGE CONTENT -->
+{% block content %}{% endblock %}
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>Contact: sahyog.admin@gmail.com | +91-9876543210</p>
+    <p>Bhopal | Delhi | Mumbai</p>
+    <p>© 2026 Sahyog</p>
+</div>
+
+</body>
+<!--  for the item added successfully msg to disappear after some time -->
+<script>
+    setTimeout(function() {
+        let toasts = document.querySelectorAll('.toast');
+        toasts.forEach(function(toast) {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 500);
+        });
+    }, 900);
+</script>
+</html>

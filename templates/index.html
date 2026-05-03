@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Welcome to Sahyog</h1>
+    <p>
+        Connecting Indian artisans to the world.
+        Every product tells a story of tradition and craftsmanship.
+    </p>
+</div>
+
+
+<!-- SLIDER (DYNAMIC) -->
+<div class="slider">
+    <div class="slides">
+        {% for product in slider_products %}
+            <img src="{{ product.image.url }}">
+        {% endfor %}
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about">
+    <h2>Empowering Rural Artisans</h2>
+
+    <p>
+        Behind every product are skilled women and men from rural India,
+        preserving traditions through generations.
+    </p>
+
+    <p>
+        Each purchase supports livelihoods and keeps culture alive.
+    </p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="container">
+    <h2>Explore Products</h2>
+
+    <div class="products">
+        {% for product in products %}
+            <div class="card">
+                <img src="{{ product.image.url }}">
+                <h3>{{ product.name }}</h3>
+                <p>₹ {{ product.price }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="hero">
+    <h1>About Indian Cultural Items</h1>
+    <p>The beauty of Indian crafted cultural items lies in their intricate detail, rich symbolism, and deep-rooted connection to India’s heritage. Each handcrafted item tells a story — of tradition, of local identity, and of the remarkable skills passed down through generations. Whether it is a delicately woven textile, a carved wooden sculpture, a painted clay pot, or a hand-beaten metal ornament, every piece reflects the soul of the artisan and the spirit of the region it comes from.</p>
+    <p>India’s cultural crafts are incredibly diverse, owing to its vast geography and many communities. In the northern states, one can find the elegance of Kashmiri embroidery and the regal splendor of Banarasi silk. Down south, the rich wooden carvings of Kerala and the temple jewelry of Tamil Nadu represent centuries-old traditions. The east brings us colorful Madhubani paintings and fine terracotta work, while the west dazzles with mirror-studded embroidery from Gujarat and marble inlay work from Rajasthan. This regional uniqueness is what makes Indian handcrafted items not only beautiful but also culturally significant.</p>
+    <p>These crafted items are not just decorative. They are often made for specific uses — from religious rituals and festivals to weddings and daily household purposes. Their forms and motifs often carry deeper meanings: peacocks for grace, elephants for wisdom, lotuses for purity, and geometric patterns for harmony. The use of bright colors and bold designs adds vibrancy to any space and captures attention immediately.</p>
+</div>
+
+{% endblock %}
