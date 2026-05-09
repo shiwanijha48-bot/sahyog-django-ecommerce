@@ -246,3 +246,146 @@ body {
     outline: none;
     border-color: orange;
 }
+
+/* ARTISANS */
+
+.artisan-section {
+    padding: 40px;
+    background: #fff8e7;
+}
+
+.artisan-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ARTISAN DETAIL */
+
+.artisan-detail {
+    padding: 40px;
+}
+
+.artisan-top {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.artisan-top img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.artisan-link {
+    text-decoration: none;
+    color: black;
+}
+
+.artisan-card:hover {
+    transform: translateY(-5px);
+}
+
+/* INDIA MAP SECTION */
+
+.map-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    padding: 60px;
+    background: #fff8e7;
+
+    flex-wrap: wrap;
+}
+
+.map-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.map-text p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.map-image {
+    flex: 1;
+    text-align: center;
+    min-width: 300px;
+}
+
+.map-image img {
+    width: 100%;
+    max-width: 400px;
+
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+/* DONATION */
+
+.donation-section {
+    text-align: center;
+    padding: 70px 30px;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+}
+
+.donation-section h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.donation-section p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.donate-btn {
+    padding: 15px 40px;
+    border: none;
+    background: #111;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donate-btn:hover {
+    background: #e67e22;
+}
+
+/*  donate now bottun */
+.donate-btn {
+    background: #e67e22;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.donate-btn:hover {
+    background: #d35400;
+    transform: scale(1.05);
+}

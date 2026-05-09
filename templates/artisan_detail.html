@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="artisan-detail">
+    <div class="artisan-top">
+        <img src="{{ artisan.image.url }}" height = "350px" width = "900px">
+        <div>
+            <h1>{{ artisan.name }}</h1>
+            <h3>{{ artisan.craft }}</h3>
+            <p><strong>Location:</strong> {{ artisan.village }}</p>
+            <p>{{ artisan.story }}</p>
+        </div>
+    </div>
+    <hr>
+    <h2>Products by {{ artisan.name }}</h2>
+    <div class="products">
+        {% for product in products %}
+            <div class="card">
+                <img src="{{ product.image.url }}">
+                <h3>{{ product.name }}</h3>
+                <p>₹ {{ product.price }}</p>
+                <a href="{% url 'product_detail' product.id %}">
+                    <button class="btn-details">
+                        View Details
+                    </button>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

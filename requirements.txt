@@ -1,0 +1,8 @@
+Django==5.2.12
+Pillow==11.2.1
+
+#  simply run:
+# ---->   pip install -r requirements.txt
+#  everything installs automatically
+# someone clones your GitHub repo, they won’t know:
+# which packages to install & which versions you used

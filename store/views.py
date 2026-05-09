@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product
+from .models import Product, Artisan
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -13,11 +13,13 @@ from django.contrib import messages
 # -------------------------------------------------------
 def home(request):
     products = Product.objects.all()
-    slider_products = Product.objects.all()[:3]  # first 3 for slider
+    slider_products = Product.objects.all()[:3]
+    artisans = Artisan.objects.all()
 
     return render(request, 'index.html', {
         'products': products,
-        'slider_products': slider_products
+        'slider_products': slider_products,
+        'artisans': artisans
     })
 
 def products_page(request):
@@ -140,6 +142,7 @@ def remove_from_cart(request, product_id):
 def product_detail(request, product_id):
     product = Product.objects.get(id=product_id)
     return render(request, 'product_detail.html', {'product': product})
+
 #  buy now option
 def buy_now(request, product_id):
     cart = {}
@@ -147,3 +150,14 @@ def buy_now(request, product_id):
     request.session['cart'] = cart
 
     return redirect('cart')  # later → checkout page
+
+#  ARTISAN
+def artisan_detail(request, artisan_id):
+    artisan = Artisan.objects.get(id=artisan_id)
+
+    products = Product.objects.filter(artisan=artisan)
+
+    return render(request, 'artisan_detail.html', {
+        'artisan': artisan,
+        'products': products
+    })

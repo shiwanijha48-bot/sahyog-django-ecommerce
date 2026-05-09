@@ -1,29 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <div class="container detail-page">
-
     <div class="detail-card">
-
         <img src="{{ product.image.url }}">
-
         <div class="detail-info">
             <h2>{{ product.name }}</h2>
             <h3>₹ {{ product.price }}</h3>
-
             <p>{{ product.description }}</p>
-
             <a href="{% url 'add_to_cart' product.id %}">
                 <button class="btn-cart">Add to Cart</button>
             </a>
-
             <a href="{% url 'buy_now' product.id %}">
                 <button class="btn-buy">Buy Now</button>
             </a>
         </div>
-
     </div>
-
 </div>
-
 {% endblock %}
