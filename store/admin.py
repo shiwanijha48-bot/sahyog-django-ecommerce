@@ -4,8 +4,9 @@ from django.contrib import admin
 # store/admin.py
 
 # ---------------------------------------
-from .models import Product,Artisan
+from .models import Product, Artisan, ArtisanApplication
 
 admin.site.register(Product)
 admin.site.register(Artisan)
+admin.site.register(ArtisanApplication)
 # ---------------------------------------

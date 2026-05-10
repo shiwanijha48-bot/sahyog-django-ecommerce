@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
+from .models import ArtisanApplication
+
 
 # Create your views here.
 
@@ -161,3 +163,20 @@ def artisan_detail(request, artisan_id):
         'artisan': artisan,
         'products': products
     })
+
+# ------- ARTISAN APPLICATION ------
+def apply_artisan(request):
+    if request.method == 'POST':
+        ArtisanApplication.objects.create(
+            name=request.POST['name'],
+            village=request.POST['village'],
+            state=request.POST['state'],
+            craft=request.POST['craft'],
+            story=request.POST['story'],
+            email=request.POST['email'],
+            phone=request.POST['phone'],
+            image=request.FILES['image'],
+        )
+        messages.success(request, "Application submitted successfully!")
+        return redirect('/')
+    return render(request, 'apply_artisan.html')
