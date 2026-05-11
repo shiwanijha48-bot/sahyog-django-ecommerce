@@ -150,3 +150,64 @@ Every purchase supports culture, tradition, and livelihoods.
 ---------------------------------------
 
 ⭐ If you like this project, give it a star!
+
+---------------------------------------
+## 🚀 NEW UPDATES (Latest Features Added)
+## 🧑‍🎨 Artisan Ecosystem (Major Upgrade)
+
+## Sahyog now includes a complete artisan onboarding system:
+
+* 📝 Artisan Application System (users can apply as artisans)
+* ✅ Admin Approval Workflow
+* 🔄 Approved applications automatically convert into Artisans
+* ❌ Rejected applications handled separately
+* 👤 Artisan linked directly with user accounts
+* 🛠️ Admin Enhancements
+
+---------------------------------------
+
+## The admin panel has been upgraded into a full control system:
+
+* 📋 Artisan application review dashboard
+* ✔️ Approve / Reject artisan requests
+* 🧾 Product management improvements
+* 👨‍🎨 Artisan Dashboard (New Module)
+
+---------------------------------------
+
+## Each approved artisan gets their own dashboard:
+
+* 📤 Add new products
+* 🧩 Backend Improvements
+* ⚙️ Added context_processors.py for global data handling
+* 🧾 Added forms.py for structured form handling
+* 🗂️ New migrations for:
+** Artisan applications
+** User linking system
+
+---------------------------------------
+
+## Order system
+* 🔄 Improved model relationships between User, Artisan, Products, Orders
+* 🛒 Checkout System (New)
+* 🧾 Dedicated checkout page added
+* 📦 Order placement system introduced
+* 🔄 Cart → Order conversion flow implemented
+* 🎨 UI Improvements
+* 📱 Better structured templates:
+# artisan_dashboard.html
+# admin_dashboard.html
+# add_product.html
+# checkout.html
+
+---------------------------------------
+
+## 🎯 Improved user experience flow across cart → checkout → order
+* 🔮 Upcoming Enhancements
+* 💳 Payment Gateway Integration (Razorpay)
+* 📬 Email notifications for orders & approvals
+* 📊 Advanced analytics dashboard
+* 🔍 Product search & filtering system
+* ⭐ Ratings & reviews system
+  
+---------------------------------------
