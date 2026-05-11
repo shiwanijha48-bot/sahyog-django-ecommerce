@@ -195,10 +195,10 @@ Every purchase supports culture, tradition, and livelihoods.
 * 🔄 Cart → Order conversion flow implemented
 * 🎨 UI Improvements
 * 📱 Better structured templates:
-# artisan_dashboard.html
-# admin_dashboard.html
-# add_product.html
-# checkout.html
+-artisan_dashboard.html
+-admin_dashboard.html
+-add_product.html
+-checkout.html
 
 ---------------------------------------
 
