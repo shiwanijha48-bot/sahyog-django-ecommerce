@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Checkout</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <h5>Receiver Name:</h5>
+            <input type="text"
+                   name="full_name"
+                   placeholder="Receiver Name"
+                   required>
+            <h5>Phone Number:</h5>
+            <input type="text"
+                   name="phone"
+                   placeholder="Phone Number"
+                   required>
+            <h5>Delivery Address:</h5>
+            <input name="address"
+                      placeholder="Delivery Address"
+                      required>
+            </textarea>
+            <h3>Total: ₹ {{ total }}</h3>
+            <p>Payment Method:
+                <strong>Cash on Delivery</strong></p>
+            <button type="submit" class="auth-btn">
+                Place Order
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

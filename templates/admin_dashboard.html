@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1 style="text-align:center;">Admin Dashboard</h1>
+    <!-- ANALYTICS -->
+    <div class="products">
+        <div class="card">
+            <h2>{{ pending_artisans.count }}</h2>
+            <p>Pending Applications</p>
+        </div>
+        <div class="card">
+            <h2>{{ approved_artisans.count }}</h2>
+            <p>Approved Artisans</p>
+        </div>
+        <div class="card">
+            <h2>{{ rejected_artisans.count }}</h2>
+            <p>Rejected Applications</p>
+        </div>
+        <div class="card">
+            <h2>{{ approved_products.count }}</h2>
+            <p>Total Products</p>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- PENDING -->
+    <h2>Pending Applications</h2>
+    <div class="products">
+        {% for artisan in pending_artisans %}
+        <div class="card">
+            <img src="{{ artisan.image.url }}">
+            <h3>{{ artisan.name }}</h3>
+            <p><strong>{{ artisan.craft }}</strong></p>
+            <p>{{ artisan.village }}</p>
+            <p>{{ artisan.story|truncatewords:20 }}</p>
+            <a href="{% url 'approve_artisan' artisan.id %}">
+                <button class="btn-buy">Approve</button></a>
+            <a href="{% url 'reject_artisan' artisan.id %}">
+                <button class="btn-cart">Reject</button></a>
+        </div>
+        {% empty %}
+        <p>No pending Artisans.</p>
+        {% endfor %}
+    </div>
+    <br><br>
+
+    <!-- APPROVED ARTISANS -->
+    <h2>Approved Artisans</h2>
+    <div class="products">
+        {% for artisan in approved_artisans %}
+        <div class="card">
+            <img src="{{ artisan.image.url }}">
+            <h3>{{ artisan.name }}</h3>
+            <p>{{ artisan.craft }}</p>
+            <p style="color: rgb(33, 172, 15);">Verified Artisan</p>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br>
+
+    <!-- REJECTED -->
+    <h2>Rejected Applications</h2>
+    <div class="products">
+        {% for artisan in rejected_artisans %}
+        <div class="card">
+            <img src="{{ artisan.image.url }}">
+            <h3>{{ artisan.name }}</h3>
+            <p>{{ artisan.craft }}</p>
+            <p style="color:red;">Rejected</p>
+        </div>
+        {% empty %}
+        <p>No rejected applications.</p>
+        {% endfor %}
+    </div>
+    <br><br>
+
+    <!-- PRODUCTS -->
+    <h2>Approved Products</h2>
+    <div class="products">
+        {% for product in approved_products %}
+        <div class="card">
+            <img src="{{ product.image.url }}">
+            <h3>{{ product.name }}</h3>
+            <p>₹ {{ product.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

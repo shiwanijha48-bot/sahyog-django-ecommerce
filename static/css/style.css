@@ -54,7 +54,7 @@ body {
 
 .slides {
     display: flex;
-    animation: slide 12s infinite;
+    animation: slide 10s infinite;
 }
 
 .slides img {
@@ -176,11 +176,13 @@ body {
 .toast {
     background: green;
     color: white;
-    padding: 10px 15px;
-    margin-bottom: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
     border-radius: 5px;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+    max-width: 200px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
 }
 
 /* ----- css for REGISTER AND LOGIN ---- */
@@ -333,60 +335,21 @@ body {
     border-radius: 20px;
 }
 
-/* DONATION */
-
-.donation-section {
-    text-align: center;
-    padding: 70px 30px;
-    background: linear-gradient(to right, #ffecd2, #fcb69f);
-}
-
-.donation-section h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.donation-section p {
-    font-size: 20px;
-    max-width: 800px;
-    margin: auto;
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-.donate-btn {
-    padding: 15px 40px;
-    border: none;
-    background: #111;
-    color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.donate-btn:hover {
-    background: #e67e22;
-}
-
-/*  donate now bottun */
-.donate-btn {
-    background: #e67e22;
-    color: white;
-    padding: 14px 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
+/*  Check out button */
+.checkout-btn {
     display: inline-block;
     margin-top: 20px;
+    background: green;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
 }
 
-.donate-btn:hover {
-    background: #d35400;
-    transform: scale(1.05);
+.checkout-btn:hover {
+    background: darkgreen;
 }
 
+.card {
+    margin-bottom: 20px;
+}

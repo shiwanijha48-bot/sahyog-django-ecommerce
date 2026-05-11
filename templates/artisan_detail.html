@@ -19,10 +19,7 @@
                 <h3>{{ product.name }}</h3>
                 <p>₹ {{ product.price }}</p>
                 <a href="{% url 'product_detail' product.id %}">
-                    <button class="btn-details">
-                        View Details
-                    </button>
-                </a>
+                    <button class="btn-details">View Details </button></a>
             </div>
         {% endfor %}
     </div>

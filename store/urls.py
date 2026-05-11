@@ -18,4 +18,10 @@ urlpatterns = [
     path('buy-now/<int:product_id>/', views.buy_now, name='buy_now'),
     path('artisan/<int:artisan_id>/', views.artisan_detail, name='artisan_detail'),
     path('apply-artisan/', views.apply_artisan, name='apply_artisan'),
+    path('artisan-dashboard/', views.artisan_dashboard, name='artisan_dashboard'),
+    path('add-product/', views.add_product, name='add_product'),
+    path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    path('approve-artisan/<int:id>/', views.approve_artisan, name='approve_artisan'),
+    path('reject-artisan/<int:id>/', views.reject_artisan, name='reject_artisan'),
+    path('checkout/', views.checkout, name='checkout'),
 ]

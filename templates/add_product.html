@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Add Product</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="auth-btn">
+                Upload Product
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
