@@ -54,14 +54,14 @@ class Product(models.Model):
 # ---------- ORDER BOOKING - CART -------------
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=200)
-    phone = models.CharField(max_length=20)
-    address = models.TextField()
-    payment_method = models.CharField(
+    full_name = models.CharField(max_length=200, null=True, blank=True)
+    phone = models.CharField(max_length=20, null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
+    total_amount = models.IntegerField(default=0)
+
+    status = models.CharField(
         max_length=50,
-        default='Cash on Delivery'
+        default='Order Placed'
     )
-    total_amount = models.IntegerField()
+
     created_at = models.DateTimeField(auto_now_add=True)
-    def __str__(self):
-        return self.full_name

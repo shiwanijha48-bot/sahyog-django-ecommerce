@@ -299,3 +299,15 @@ def checkout(request):
     return render(request, 'checkout.html', {
         'total': total
     })
+
+# ----- My Orders --------
+from .models import Order
+
+@login_required
+def my_orders(request):
+
+    orders = Order.objects.filter(user=request.user).order_by('-created_at')
+
+    return render(request, 'my_orders.html', {
+        'orders': orders
+    })

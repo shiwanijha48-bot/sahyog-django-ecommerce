@@ -16,6 +16,7 @@
         <a href="/products/">Products</a>
         <a href="/cart/">Cart</a>
         {% if user.is_authenticated %}
+            <a href="{% url 'my_orders' %}">My Orders</a>
             <span class="user">
                 Hi, {{ user.username }}
             </span>

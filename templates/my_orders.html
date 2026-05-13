@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    .container{
+        width: 80%;
+        margin: auto;
+        padding: 30px 0;
+    }
+    .order-card{
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .step{
+        padding: 10px;
+        margin: 8px 0;
+        border-left: 5px solid gray;
+        background: #f5f5f5;
+    }
+    .active{
+        border-left: 5px solid green;
+        background-color: #f0fff0;
+    }
+</style>
+
+<div class="container">
+    <h2>My Orders</h2>
+    {% for order in orders %}
+    <div class="order-card">
+        <h3>{{ order.full_name }}</h3>
+        <p><strong>Status:</strong> {{ order.status }}</p>
+        <p><strong>Address:</strong> {{ order.address }}</p>
+        <p><strong>Phone:</strong> {{ order.phone }}</p>
+        <p><strong>Total:</strong> ₹{{ order.total_amount }}</p>
+        <p>
+            <strong>Ordered On:</strong>
+            {{ order.created_at }}
+        </p>
+        <hr>
+        <h4>Tracking</h4>
+        <div class="step active">Order Placed</div>
+        {% if order.status == "Confirmed" or order.status == "Packed" or order.status == "Shipped" or order.status == "Out for Delivery" or order.status == "Delivered" %}
+            <div class="step active">Confirmed</div>
+        {% else %}
+            <div class="step">Confirmed</div>
+        {% endif %}
+        {% if order.status == "Packed" or order.status == "Shipped" or order.status == "Out for Delivery" or order.status == "Delivered" %}
+            <div class="step active">Packed</di
+        {% else %}
+            <div class="step">Packed</div>
+        {% endif %}
+        {% if order.status == "Shipped" or order.status == "Out for Delivery" or order.status == "Delivered" %}
+            <div class="step active">Shipped</div>
+        {% else %}
+            <div class="step">Shipped</div>
+        {% endif %}
+        {% if order.status == "Out for Delivery" or order.status == "Delivered" %}
+            <div class="step active">Out for Delivery</div>
+        {% else %}
+            <div class="step">Out for Delivery</div>
+        {% endif %}
+        {% if order.status == "Delivered" %}
+            <div class="step active">Delivered</div>
+        {% else %}
+            <div class="step">Delivered</div>
+        {% endif %}
+    </div>
+    {% empty %}
+    <p>No orders yet.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

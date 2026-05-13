@@ -24,4 +24,5 @@ urlpatterns = [
     path('approve-artisan/<int:id>/', views.approve_artisan, name='approve_artisan'),
     path('reject-artisan/<int:id>/', views.reject_artisan, name='reject_artisan'),
     path('checkout/', views.checkout, name='checkout'),
+    path('my-orders/', views.my_orders, name='my_orders'),
 ]
