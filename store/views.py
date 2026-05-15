@@ -17,13 +17,11 @@ from .models import Order
 # Create your views here.
 
 def home(request):
-
     products = Product.objects.all()
-    slider_products = Product.objects.all()[:6]
+    slider_products = Product.objects.all()[:10]
     artisans = Artisan.objects.all()
 
     is_artisan = False
-
     if request.user.is_authenticated:
         is_artisan = Artisan.objects.filter(
             user=request.user
@@ -40,7 +38,7 @@ def products_page(request):
     products = Product.objects.all()
     return render(request, 'products.html', {'products': products})
 
-# ---------------------------------------------------------------------------
+# --------- REGISTER PAGE-------------
 
 def register_page(request):
     if request.method == 'POST':
@@ -61,6 +59,7 @@ def register_page(request):
 
     return render(request, 'register.html')
 
+# ----------- LOGIN --------------
 
 def login_page(request):
     if request.method == 'POST':
@@ -82,8 +81,8 @@ def logout_page(request):
     logout(request)
     return redirect('home')
 
-# ===========================================
-# ADD TO CART
+# ------------ ADD TO CART ---------------
+
 def add_to_cart(request, product_id):
     cart = request.session.get('cart', {})
 
@@ -97,7 +96,7 @@ def add_to_cart(request, product_id):
     messages.success(request, "Item added to cart successfully!!")
     return redirect(request.META.get('HTTP_REFERER', 'home'))
 
-#  VIEW CART
+# ----------- VIEW CART -----------
 def cart_page(request):
     cart = request.session.get('cart', {})
     items = []
@@ -115,9 +114,8 @@ def cart_page(request):
         })
 
     return render(request, 'cart.html', {'items': items, 'total': total})
-# ======================================================================================
 
-# + INCREASE
+#  ------- + INCREASE --------
 def increase_quantity(request, product_id):
     cart = request.session.get('cart', {})
 
@@ -128,7 +126,7 @@ def increase_quantity(request, product_id):
     return redirect('cart')
 
 
-# - DECREASE
+# -------- - DECREASE --------
 def decrease_quantity(request, product_id):
     cart = request.session.get('cart', {})
 
@@ -142,7 +140,7 @@ def decrease_quantity(request, product_id):
     return redirect('cart')
 
 
-#  x REMOVE ITEM
+#  -------- x REMOVE ITEM --------
 def remove_from_cart(request, product_id):
     cart = request.session.get('cart', {})
 
@@ -152,12 +150,12 @@ def remove_from_cart(request, product_id):
     request.session['cart'] = cart
     return redirect('cart')
 
-#  Product detail page
+# -------- PRODUCT DEATIL PAGE --------
 def product_detail(request, product_id):
     product = Product.objects.get(id=product_id)
     return render(request, 'product_detail.html', {'product': product})
 
-#  buy now option
+#  -------- BUY NOW OPTION --------
 def buy_now(request, product_id):
     cart = {}
     cart[str(product_id)] = 1
@@ -165,7 +163,8 @@ def buy_now(request, product_id):
 
     return redirect('cart')  # later → checkout page
 
-#  ARTISAN
+
+#  -------- ARTISAN --------
 def artisan_detail(request, artisan_id):
     artisan = Artisan.objects.get(id=artisan_id)
 
@@ -176,8 +175,8 @@ def artisan_detail(request, artisan_id):
         'products': products
     })
 
-# ------- ARTISAN APPLICATION ------
 
+# ------- ARTISAN APPLICATION ------
 @login_required
 def apply_artisan(request):
     if request.method == 'POST':
@@ -207,7 +206,7 @@ def artisan_dashboard(request):
         'products': products
     })
 
-# -------------- ADD PRODUCT BY ARTISAN ------
+# ---------- ADD PRODUCT BY ARTISAN ------
 @login_required
 def add_product(request):
     artisan = Artisan.objects.get(user=request.user)
@@ -244,7 +243,6 @@ def admin_dashboard(request):
 
 @staff_member_required
 def approve_artisan(request, id):
-
     application = ArtisanApplication.objects.get(id=id)
 
     Artisan.objects.create(
@@ -258,7 +256,6 @@ def approve_artisan(request, id):
 
     application.approved = True
     application.save()
-
     return redirect('admin_dashboard')
 
 
@@ -300,7 +297,7 @@ def checkout(request):
         'total': total
     })
 
-# ----- My Orders --------
+# ----- MY ORDERS --------
 from .models import Order
 
 @login_required

@@ -1,5 +1,7 @@
 from .models import Artisan
 
+
+#  -------- ARTISAN STATUS --------
 def artisan_status(request):
     is_artisan = False
     if request.user.is_authenticated:
