@@ -36,19 +36,17 @@ The platform connects rural artisans with customers, helping preserve traditiona
 
 ---------------------------------------
 
-## 🔐 Demo Credentials
-
-### Admin Login
-Username: sahyog.admin
-Password: sahyog1234
+## 🔐 Demo Credentials  (For Testing)
 
 ### Artisan Login
 Username: Arif Hussain
 Password: a1234
 
-### User
+### User Login
 Username: Anu
 Password: a1234
+
+> Admin access credentials are intentionally not shared publicly.
 
 ---------------------------------------
 
@@ -91,14 +89,22 @@ Sahyog/
 4. Artisan gets dashboard access
 5. Artisan uploads products
 ---------------------------------------
-   
+
+## 📸 Project Screenshots
+
+The project demo screenshots are available in:
+
+📄 `SAHYOG_Working_Demo.pdf`
+
+
+---------------------------------------
 
 ## ⚙️ Installation & Setup
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/sahyog.git
+git clone https://github.com/shiwanijha48-bot/sahyog-django-ecommerce.git
 cd sahyog
 ```
 
@@ -157,6 +163,13 @@ Use it to:
 * Manage data
 
 ---------------------------------------
+## 📦 Dependencies
+
+Main packages used:
+
+- Django
+- Pillow
+---------------------------------------
 
 ## 🎯 Future Improvements
 
@@ -207,7 +220,7 @@ Every purchase supports culture, tradition, and livelihoods.
 
 ---------------------------------------
 
-## The admin panel has been upgraded into a full control system:
+### The admin panel has been upgraded into a full control system:
 
 * 📋 Artisan application review dashboard
 * ✔️ Approve / Reject artisan requests
@@ -216,7 +229,7 @@ Every purchase supports culture, tradition, and livelihoods.
 
 ---------------------------------------
 
-## Each approved artisan gets their own dashboard:
+### Each approved artisan gets their own dashboard:
 
 * 📤 Add new products
 * 🧩 Backend Improvements
@@ -228,7 +241,7 @@ Every purchase supports culture, tradition, and livelihoods.
 
 ---------------------------------------
 
-## Order system
+### Order system
 * 🔄 Improved model relationships between User, Artisan, Products, Orders
 * 🛒 Checkout System (New)
 * 🧾 Dedicated checkout page added
@@ -256,5 +269,6 @@ Every purchase supports culture, tradition, and livelihoods.
  ## 👩‍💻 Developer
 
 Developed with dedication by **Shiwani Jha**
+Developed as a Full Stack Django Project for academic learning purposes.
 
 ---------------------------------------
