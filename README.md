@@ -19,6 +19,38 @@ The platform connects rural artisans with customers, helping preserve traditiona
 * 📱 Responsive UI
 
 ---------------------------------------
+## ✅ Current Modules
+
+| Module | Status |
+|---|---|
+| User Authentication | ✅ Completed |
+| Product Management | ✅ Completed |
+| Cart System | ✅ Completed |
+| Checkout System | ✅ Completed |
+| Order Tracking | ✅ Completed |
+| Artisan Application System | ✅ Completed |
+| Admin Approval Workflow | ✅ Completed |
+| Artisan Dashboard | ✅ Completed |
+| Responsive UI | ✅ Completed |
+| Media Upload System | ✅ Completed |
+
+---------------------------------------
+
+## 🔐 Demo Credentials
+
+### Admin Login
+Username: sahyog.admin
+Password: sahyog1234
+
+### Artisan Login
+Username: Arif Hussain
+Password: a1234
+
+### User
+Username: Anu
+Password: a1234
+
+---------------------------------------
 
 ## 🛠️ Tech Stack
 
@@ -42,6 +74,24 @@ Sahyog/
 ```
 
 ---------------------------------------
+
+## 🔄 Application Workflow
+
+1. User registers/login
+2. User browses products
+3. User adds items to cart
+4. User places order via checkout
+5. Orders stored in database
+6. Users can track orders
+
+### Artisan Workflow
+1. User applies as artisan
+2. Admin reviews application
+3. Approved application converts into Artisan
+4. Artisan gets dashboard access
+5. Artisan uploads products
+---------------------------------------
+   
 
 ## ⚙️ Installation & Setup
 
@@ -108,15 +158,6 @@ Use it to:
 
 ---------------------------------------
 
-## 📸 Screenshots (Add Later)
-
-* Homepage
-* Products Page
-* Product Detail Page
-* Cart Page
-
----------------------------------------
-
 ## 🎯 Future Improvements
 
 * 💳 Payment integration (Razorpay/Stripe)
@@ -138,7 +179,7 @@ Feel free to fork this repo and submit a pull request.
 
 * Email: sahyog.admin@gmail.com
 * Location: Bhopal, India
-
+ 
 ---------------------------------------
 
 ## ❤️ Vision
@@ -210,4 +251,10 @@ Every purchase supports culture, tradition, and livelihoods.
 * 🔍 Product search & filtering system
 * ⭐ Ratings & reviews system
   
+---------------------------------------
+
+ ## 👩‍💻 Developer
+
+Developed with dedication by **Shiwani Jha**
+
 ---------------------------------------
