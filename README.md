@@ -268,7 +268,7 @@ Every purchase supports culture, tradition, and livelihoods.
 
  ## 👩‍💻 Developer
 
-Developed with dedication by **Shiwani Jha**
-Developed as a Full Stack Django Project for academic learning purposes.
+* Developed with dedication by **Shiwani Jha**
+* Developed as a Full Stack Django Project for academic learning purposes.
 
 ---------------------------------------
