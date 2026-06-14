@@ -1,5 +1,9 @@
 Django==5.2.12
 Pillow==11.2.1
+gunicorn
+psycopg2-binary
+whitenoise
+
 
 #  simply run:
 # ---->   pip install -r requirements.txt
