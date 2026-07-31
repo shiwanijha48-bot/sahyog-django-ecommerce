@@ -19,6 +19,7 @@ The platform connects rural artisans with customers, helping preserve traditiona
 * 📱 Responsive UI
 
 ---------------------------------------
+
 ## ✅ Current Modules
 
 | Module | Status |
